@@ -1,0 +1,38 @@
+{
+  "name": "koa-nuxt-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.12.0"
+  },
+  "scripts": {
+    "start": "npm run build && npm run serve",
+    "serve": "cross-env NODE_ENV=production node build/main.js",
+    "build": "run-p build:*",
+    "build:nuxt": "nuxt build",
+    "build:server": "parcel build server/index.js --target node",
+    "dev": "run-p dev:*",
+    "dev:watch": "parcel watch server/index.js --target node",
+    "dev:serve": "nodemon dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hiswe <hiswehalya@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.3",
+    "boom": "^7.2.0",
+    "koa": "^2.5.3",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.9.0",
+    "nuxt": "^2.2.0",
+    "shortid": "^2.2.13"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "npm-run-all": "^4.1.3",
+    "parcel-bundler": "^1.10.3"
+  }
+}

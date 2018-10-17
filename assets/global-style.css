@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  --color-vue: hsl(153, 47%, 53%);
+  --color-vue-light: hsl(153, 47%, 95%);
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+  color: #2c3e50;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: currentColor;
+  text-decoration-color: var(--c-accent);
+}
+a:hover {
+  color: var(--c-accent);
+}
+
+.no-script-message {
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+  background: var(--color-vue-light);
+}
