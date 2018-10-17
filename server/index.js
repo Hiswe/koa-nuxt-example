@@ -7,9 +7,9 @@ import Boom from 'Boom'
 import shortid from 'shortid'
 import logger from 'koa-logger'
 import session from 'koa-session'
+import koaNuxt from '@hiswe/koa-nuxt'
 
 import nuxtConfig from '../nuxt.config.js'
-import koaNuxt from '../../dist'
 
 consola.level = 100
 

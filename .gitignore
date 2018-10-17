@@ -1,3 +1,8 @@
+# own
+.nuxt
+.nuxt
+build
+
 # Logs
 logs
 *.log
