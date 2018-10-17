@@ -15,3 +15,10 @@ to launch after cloning the projet:
 npm install
 npm start
 ```
+
+### dev mode
+
+```sh
+npm install
+npm run dev
+```

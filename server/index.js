@@ -11,8 +11,6 @@ import koaNuxt from '@hiswe/koa-nuxt'
 
 import nuxtConfig from '../nuxt.config.js'
 
-consola.level = 100
-
 const appLogger = consola.withScope(`APP`)
 const errorLogger = consola.withScope(`ERROR`)
 
@@ -33,7 +31,9 @@ async function start() {
   // SERVER CONFIG
   //////
 
-  app.use(logger())
+  if (nuxtConfig.dev) {
+    app.use(logger())
+  }
 
   const SESSIONS_CONFIG = {
     key: `kn-example`,

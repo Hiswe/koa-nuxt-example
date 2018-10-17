@@ -11,7 +11,7 @@
     "serve": "cross-env NODE_ENV=production node build/main.js",
     "build": "run-p build:*",
     "build:nuxt": "nuxt build",
-    "build:server": "backpack dev",
+    "build:server": "backpack build",
     "dev": "backpack dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
