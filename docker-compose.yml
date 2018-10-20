@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    image: koa-nuxt-example/web
+    build:
+      context: .
+    command: 'npm start'
+    ports:
+      - '3000:3000'
+      # - '9229:9229'

@@ -13,7 +13,7 @@
     "build:nuxt": "nuxt build",
     "build:server": "backpack build",
     "dev": "backpack dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docker:start": "./start.sh"
   },
   "repository": "https://github.com/Hiswe/koa-nuxt-example.git",
   "author": "Hiswe <hiswehalya@gmail.com>",
