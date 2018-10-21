@@ -14,7 +14,8 @@
     "build:server": "backpack build",
     "dev": "backpack dev",
     "docker:start": "./docker-scripts/start.sh",
-    "docker:dev": "./docker-scripts/dev.sh"
+    "docker:dev": "./docker-scripts/dev.sh",
+    "toc": "npx doctoc README.md --github"
   },
   "repository": "https://github.com/Hiswe/koa-nuxt-example.git",
   "author": "Hiswe <hiswehalya@gmail.com>",
