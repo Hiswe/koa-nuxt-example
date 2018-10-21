@@ -3,7 +3,7 @@ import Router from 'koa-router'
 import consola from 'consola'
 import { Nuxt, Builder } from 'nuxt'
 import util from 'util'
-import Boom from 'Boom'
+import Boom from 'boom'
 import shortid from 'shortid'
 import logger from 'koa-logger'
 import session from 'koa-session'
@@ -15,7 +15,7 @@ const appLogger = consola.withScope(`APP`)
 const errorLogger = consola.withScope(`ERROR`)
 
 const app = new Koa()
-const HOST = process.env.HOST || '127.0.0.1'
+const HOST = process.env.HOST || `0.0.0.0`
 const PORT = process.env.PORT || 3000
 
 // for signed cookies
@@ -24,7 +24,7 @@ app.keys = [
   `64241b9838c5d0d5f94f7e83c71d83af4674f8c84e406a138263a8803a3b1e6f`,
 ]
 
-nuxtConfig.dev = !(app.env === 'production')
+nuxtConfig.dev = !(app.env === `production`)
 
 async function start() {
   //////
@@ -124,6 +124,22 @@ async function start() {
   })
   router.post(`/will-throw`, async ctx => {
     throw Boom.teapot()
+  })
+
+  router.post(`/login`, async ctx => {
+    ctx.session.connected = true
+    ctx.session.notification = { message: `connected` }
+    await ctx.session.manuallyCommit()
+    if (ctx.state.isJson) return (ctx.body = { connected: true })
+    ctx.redirect(`/`)
+  })
+
+  router.post(`/logout`, async ctx => {
+    delete ctx.session.connected
+    ctx.session.notification = { message: `disconnected` }
+    await ctx.session.manuallyCommit()
+    if (ctx.state.isJson) return (ctx.body = { connected: false })
+    ctx.redirect(`/`)
   })
 
   //----- MOUNT ROUTER TO APPLICATION

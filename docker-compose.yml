@@ -1,0 +1,23 @@
+version: '3'
+volumes:
+  ? node_modules
+services:
+  web:
+    image: koa-nuxt-example/web
+    build:
+      context: .
+    command: 'npm start'
+    ports:
+      - '3000:3000'
+      # - '9229:9229'
+  dev:
+    image: koa-nuxt-example/dev
+    build:
+      context: .
+    # command: 'npm run dev'
+    volumes:
+      - .:/home/node/app
+      - node_modules:/home/node/app/node_modules
+    ports:
+      - '3000:3000'
+      - '9229:9229'
