@@ -126,6 +126,22 @@ async function start() {
     throw Boom.teapot()
   })
 
+  router.post(`/login`, async ctx => {
+    ctx.session.connected = true
+    ctx.session.notification = { message: `connected` }
+    await ctx.session.manuallyCommit()
+    if (ctx.state.isJson) return (ctx.body = { connected: true })
+    ctx.redirect(`/`)
+  })
+
+  router.post(`/logout`, async ctx => {
+    delete ctx.session.connected
+    ctx.session.notification = { message: `disconnected` }
+    await ctx.session.manuallyCommit()
+    if (ctx.state.isJson) return (ctx.body = { connected: false })
+    ctx.redirect(`/`)
+  })
+
   //----- MOUNT ROUTER TO APPLICATION
 
   app.use(router.routes())
