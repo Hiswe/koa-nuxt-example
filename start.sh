@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker-compose up web || exit 1
+docker-compose up --renew-anon-volumes web || exit 1
