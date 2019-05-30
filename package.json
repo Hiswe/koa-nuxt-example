@@ -4,7 +4,7 @@
   "description": "small setup for koa with nuxt",
   "main": "index.js",
   "engines": {
-    "node": ">=8.12.0"
+    "node": ">=12.0.0"
   },
   "scripts": {
     "start": "npm run build && npm run serve",
@@ -21,14 +21,14 @@
   "author": "Hiswe <hiswehalya@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@hapi/boom": "^7.4.2",
     "@hiswe/koa-nuxt": "^1.0.0",
-    "@nuxtjs/axios": "^5.3.6",
-    "boom": "^7.2.2",
+    "@nuxtjs/axios": "^5.5.3",
     "koa": "^2.6.2",
     "koa-logger": "^3.2.0",
     "koa-router": "^7.4.0",
     "koa-session": "^5.10.0",
-    "nuxt": "^2.3.4",
+    "nuxt": "2.7.1",
     "shortid": "^2.2.14"
   },
   "devDependencies": {
