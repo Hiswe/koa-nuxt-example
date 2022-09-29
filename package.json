@@ -21,7 +21,7 @@
   "author": "Hiswe <hiswehalya@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@hapi/boom": "^7.4.2",
+    "@hapi/boom": "^7.4.11",
     "@hiswe/koa-nuxt": "^1.0.0",
     "@nuxtjs/axios": "^5.5.3",
     "koa": "^2.6.2",
